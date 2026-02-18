@@ -223,7 +223,13 @@ Contributions are welcome.
 Help grow the Flutter ecosystem.
 
 ---
+☕ Support the Project
 
+If this package saves you time or improves your workflow, consider supporting the project.
+
+<p align="center"> <a href="https://github.com/tharanitharan305/super_string_utils"> <img src="https://img.shields.io/github/stars/tharanitharan305/super_string_utils?style=social" alt="GitHub Stars" /> </a> &nbsp;&nbsp; <a href="https://pub.dev/packages/super_string_utils"> <img src="https://img.shields.io/pub/v/super_string_utils?style=flat-square" alt="Pub Version" /> </a> &nbsp;&nbsp; <a href="https://buymeacoffee.com/tharanitharan"> <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" height="35" alt="Buy Me A Coffee"/> </a> </p>
+
+Your support helps maintain, improve, and grow the Flutter ecosystem 💙
 ## 📜 License
 
 Released under the MIT License.
