@@ -1,0 +1,18 @@
+﻿name: super_string_utils
+description: A production-ready collection of String extension methods for Dart and Flutter. Features include validation, transformation, extraction, masking, and fuzzy matching.
+version: 1.1.0
+homepage: https://github.com/example/super_string_utils
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  crypto: ^3.0.3
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  lints: ^2.1.0
+  test: ^1.24.0
