@@ -1,210 +1,235 @@
-﻿Super String Utils
+# super_string_utils
 
-A powerhouse collection of 80+ String extension methods and Fluent UI builders for Dart and Flutter. Stop rewriting utility functions and start building faster.
+A production‑grade Flutter utility engine delivering 80+ powerful String extensions and Fluent UI builders for modern Dart & Flutter development.
 
-<p align="center">
-<a href="https://www.google.com/search?q=https://pub.dev/packages/super_string_utils">
-<img src="https://www.google.com/search?q=https://img.shields.io/pub/v/super_string_utils.svg" alt="Pub" />
-</a>
-<a href="https://www.google.com/search?q=https://github.com/tharanitharan305/super_string_utils">
-<img src="https://www.google.com/search?q=https://img.shields.io/github/stars/tharanitharan305/super_string_utils%3Fstyle%3Dsocial" alt="GitHub stars" />
-</a>
-<a href="https://opensource.org/licenses/MIT">
-<img src="https://www.google.com/search?q=https://img.shields.io/badge/license-MIT-blue.svg" alt="License: MIT" />
-</a>
-</p>
+---
 
-⚡ Supercharge Your Strings
+## 🚀 Why super_string_utils?
 
-Dart's String class is great, but it lacks the batteries-included utilities needed for modern app development. Super String Utils fills that gap by providing a comprehensive suite of extensions for validation, manipulation, security, and—unique to this package—Fluent UI Builders.
+Dart’s native `String` class is powerful — but modern applications demand far more.
 
-📱 Live Demo
+Validation. Hashing. Parsing. Extraction. Layout generation. UI building.
 
-Experience the power of Super String Utils directly in your browser:
-View Live Example App
+Developers repeatedly rewrite regex patterns, widget boilerplate, and transformation helpers.
 
-🚀 Features
+**super_string_utils eliminates that repetition.**
 
-🛡️ Validation – isEmail, isUrl, isStrongPassword, isIpv4, isJson
+It bridges the gap between raw strings and production-ready Flutter UI using a clean, fluent, and chainable architecture.
 
-✨ Transformation – toTitleCase, slugify, reverse, initials
+Built for serious Flutter developers who value speed, clarity, and scalability.
 
-🔒 Security – md5Hash, sha256Hash, toBase64, maskEmail
+---
 
-🎨 Fluent UI – Build Text, Row, Column, and SnackBar widgets directly from Strings
+## ✨ Core Features
 
-🧩 Extraction – Get lists of #hashtags, urls, emails, or numbers instantly
+### 🔡 80+ Extensions
 
-🧠 Analysis – readingTime, wordCount, fuzzyMatch (Levenshtein/Jaro-Winkler)
+Comprehensive toolkit covering validation, transformation, extraction, security, analysis, and processing.
 
-📐 Advanced Layout – Per-index control for list generation (padding, expansion, flex)
+### 🎨 Fluent UI Builders
 
-📦 Installation
+Build `Text`, `SnackBar`, `Row`, and `Column` widgets directly from strings using a clean Builder pattern.
 
-Add this to your pubspec.yaml:
+### 📐 Advanced Layout Engine
 
+Generate structured layouts from `List<String>` with per-index control:
+
+* `expandAt()`
+* `containerAt()`
+* `paddingAt()`
+* `flexibleAt()`
+* `align()`
+
+### 🔐 Security Suite
+
+Built-in hashing and encoding utilities:
+
+* MD5
+* SHA-256
+* Base64
+* Email masking
+* String obfuscation
+
+### 🌐 Web & Network Utilities
+
+IPv4 validation, JSON detection, URL encoding/decoding, numeric parsing helpers.
+
+### 🧠 Text Analysis Tools
+
+Reading time estimation, word count, fuzzy matching (Levenshtein), word frequency.
+
+### 🛡 Production Ready
+
+Fully null-safe, optimized, dependency-minimal, and designed for cross-platform Flutter apps.
+
+---
+
+## 📦 Installation
+
+Add to your `pubspec.yaml`:
+
+```yaml
 dependencies:
-super_string_utils: ^1.1.0
-
+  super_string_utils: ^1.1.0
+```
 
 Then run:
 
+```bash
 flutter pub get
+```
 
+---
 
-🧠 Usage
+## 🧠 Basic Usage
 
-1. Core Utilities
+Import the package:
 
-Manipulate and validate strings with ease.
-
+```dart
 import 'package:super_string_utils/super_string_utils.dart';
+```
 
-// Validation
-print("user@example.com".isEmail); // true
-print("192.168.1.1".isIpv4);       // true
-print("Hello 😀".containsEmoji);   // true
+---
 
-// Transformation
-print("hello world".toTitleCase);  // "Hello World"
-print("Hello World!".slugify);     // "hello-world"
+## 🔍 Validation Examples
 
-// Extraction
-String bio = "Reach me at test@test.com or #flutter";
-print(bio.extractEmails);   // ["test@test.com"]
-print(bio.extractHashtags); // ["#flutter"]
+```dart
+"user@domain.com".isEmail;       // true
+"192.168.1.1".isIpv4;            // true
+"StrongP@ss1".isStrongPassword;  // true
+"Hello 😀".containsEmoji;        // true
+```
 
+---
 
-2. Fluent UI Builders
+## ✨ Transformation Examples
 
-Stop writing boilerplate Text widgets. Use the fluent API.
+```dart
+"hello world".toTitleCase;      // "Hello World"
+"Flutter & Dart".slugify;       // "flutter-dart"
+"123.45".toDoubleOrNull;        // 123.45
+"example".reverse;              // "elpmaxe"
+```
 
-// Simple
-"Hello World".toText(style: TextStyle(fontSize: 20));
+---
 
-// Advanced Builder
-"Welcome Back"
-.toTextBuilder
-.size(24)
-.weight(FontWeight.bold)
-.color(Colors.indigo)
-.center()
-.build();
+## 🔐 Security & Encoding
 
-// Snackbars
-"File Saved".toSnackbarBuilder
-.floating()
-.color(Colors.green)
-.withCloseIcon()
-.build();
+```dart
+"password".md5Hash;             // "5f4dcc3b..."
+"data".toBase64;                // "ZGF0YQ=="
+"secret@mail.com".maskEmail;    // "s*****@mail.com"
+```
 
+---
 
-3. Advanced Layouts
+## 🔎 Extraction & Processing
 
-Generate complex Row or Column layouts from lists of strings with per-item customization.
+```dart
+"Visit https://pub.dev".extractUrls;      // ["https://pub.dev"]
+"Order #1234 cost $50".extractNumbers;    // [1234, 50]
+"Some text".wordCount;                    // 2
+```
 
-["Header", "Body Content", "Footer"]
-.toTextColumn()
-.spacing(10)
-.style(TextStyle(fontSize: 16))
-// Customize specific indices
-.containerAt(0, color: Colors.grey[200], padding: EdgeInsets.all(8))
-.expandAt(1) // Make the body expand
-.align(TextAlign.center)
-.build();
+---
 
+# 🎨 Fluent UI Builders
 
-4. Security & Web
+Stop writing repetitive Flutter boilerplate.
 
-Handle hashing and encoding directly on the string object.
+### 📝 Text Builder
 
-String data = "Sensitive Data";
+```dart
+"Super String".toTextBuilder
+    .size(20)
+    .weight(FontWeight.w600)
+    .color(Colors.indigo)
+    .padded(EdgeInsets.all(16))
+    .insideContainer(
+      color: Colors.grey[200],
+      borderRadius: BorderRadius.circular(8),
+    )
+    .center()
+    .build();
+```
 
-// Hashing
-print(data.md5Hash);
-print(data.sha256Hash);
+---
 
-// Encoding
-String encoded = data.toBase64;
-print(encoded.fromBase64); // "Sensitive Data"
+### 🔔 SnackBar Builder
 
+```dart
+"Action Success".toSnackbarBuilder
+    .floating()
+    .color(Colors.green)
+    .withCloseIcon()
+    .build();
+```
 
-🛠️ List of Categories
+---
 
-Category
+# 📐 Advanced List Layout Engine
 
-Key Methods
+Generate dynamic layouts from `List<String>` with per-index customization.
 
-Boolean
+```dart
+["Header", "Content Body", "Footer"]
+    .toTextColumn()
+    .spacing(12)
+    .crossAxis(CrossAxisAlignment.start)
+    .style(TextStyle(fontSize: 14))
+    .containerAt(0, color: Colors.blue)
+    .expandAt(1)
+    .align(TextAlign.right)
+    .build();
+```
 
-isBlank, isNumeric, isAlpha, isUrl, isStrongPassword
+This enables flexible UI construction for menus, dashboards, and dynamic layouts.
 
-Transform
+---
 
-capitalizeSafe, toTitleCase, slugify, removeAccents
+## 📊 Feature Categories
 
-Security
+| Category   | Includes Methods Like                          |
+| ---------- | ---------------------------------------------- |
+| Boolean    | isBlank, isNumeric, isAlpha, isUrl             |
+| Transform  | toTitleCase, slugify, reverse                  |
+| Security   | md5Hash, sha256Hash, maskEmail                 |
+| Web        | urlEncode, urlDecode, isIpv4                   |
+| Numeric    | toDoubleOrNull, toIntOrNull                    |
+| Analysis   | wordCount, readingTime, fuzzyMatch             |
+| Processing | indent, unindent, removeWhitespace             |
+| Fluent UI  | toTextBuilder, toSnackbarBuilder, toTextColumn |
 
-mask, maskEmail, md5Hash, toBase64
+---
 
-Web
+## 📱 Live Demo
 
-urlEncode, isIpv4, isJson
+Explore the interactive showcase app:
 
-Numeric
+👉 [https://super-string-utils-example.vercel.app/](https://super-string-utils-example.vercel.app/)
 
-toBool, toDoubleOrNull, isBinary, isHex
+---
 
-Analysis
+## 🤝 Contributing
 
-readingTime, wordFrequency, countMatches
+Contributions are welcome.
 
-Fluent UI
+1. Fork the repository
+2. Create a feature branch
+3. Commit your changes
+4. Push to your fork
+5. Open a Pull Request
 
-toText, toTextRow, toSnackbarBuilder
+Help grow the Flutter ecosystem.
 
-📣 Credits
+---
 
-Author: Tharanitharan Kumarasamy
+## 📜 License
 
-Repository: https://github.com/tharanitharan305/super_string_utils
+Released under the MIT License.
 
-Developed for the global Flutter developer community.
+---
 
-🤝 Open Source Contributions
-
-Super String Utils is open source and welcomes contributions!
-
-How to Contribute
-
-⭐ Star the repository
-
-Fork the project
-
-Create a feature branch: git checkout -b feature/amazing-feature
-
-Commit your changes
-
-Push to your fork
-
-Open a Pull Request
-
-☕ Support the Project
-
-If this package saved you time, consider buying me a coffee to support maintenance and new features:
-
-<p>
-<a href="https://www.google.com/search?q=https://github.com/tharanitharan305/super_string_utils">
-<img src="https://www.google.com/search?q=https://img.shields.io/github/stars/tharanitharan305/super_string_utils%3Fstyle%3Dsocial" />
-</a>
-&nbsp;&nbsp;
-<a href="https://buymeacoffee.com/tharanitharan">
-<img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" height="40"/>
-</a>
+<p align="center">
+<strong>Built with 💙 for the Flutter community</strong>
 </p>
-
-Your support helps keep the code clean and the features coming! ❤️
-
-📜 License
-
-This project is released under the MIT License.
